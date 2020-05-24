@@ -1,0 +1,24 @@
+{
+  "name": "watherjournalapp",
+  "version": "1.0.0",
+  "description": "Udacity FEND weather journal app project 2",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashehouse/Udacity-FEND-Weather-Journal-App.git"
+  },
+  "author": "Jody Dixon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashehouse/Udacity-FEND-Weather-Journal-App/issues"
+  },
+  "homepage": "https://github.com/ashehouse/Udacity-FEND-Weather-Journal-App#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}
