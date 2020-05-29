@@ -17,35 +17,32 @@ let submitBtn = document.getElementById('generate');
 submitBtn.addEventListener('click', event => {
     zip = document.getElementById('zip').value;
     mood = document.getElementById('feelings').value;
+    document.getElementById('date').textContent = newDate;
     apiUrl = `${url}zip=${zip}&units=imperial${apiKey}`;//variable to hold data source url
+    document.getElementById('content').textContent = `Feeling: ${mood}`;
     if (zip) {
         getWeather();
     } else {
         console.log('error');
     };
-  
-    
-
-
-
-
-    // async function getISS() {
-    //     const response = await fetch(api_url);
-    //     const data = await response.json();
-    //     const { latitude, longitude } = data;
 })
 
 async function getWeather() {
     const response = await fetch(apiUrl);
     const data = await response.json();
-    // const { name, weather } = data;
-    const {weather, name: city, main: {temp}} = data;
-    // const icon = weather[0].icon; 
-    // const description = weather[0].description;
+    const { weather, name: city, main: {temp} } = data;
     const { icon, description } = weather[0];
+    document.getElementById('temp').textContent = `Temperature: ${temp}°`;
+    const root = document.getElementById('entryHolder');
+    const iconArea = document.createElement('div');
+    const iconLink = `http://openweathermap.org/img/wn/${icon}2x.png`;
+    
+    root.append(iconArea);
+
+    iconArea.innerHTML = `<img src="http://openweathermap.org/img/wn/${icon}@2x.png">`;
+
+    
     console.log(city, temp, icon, description);
-    
-    
 }
 
 
