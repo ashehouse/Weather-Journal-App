@@ -15,30 +15,6 @@ app.use(bodyParser.json());
 // Cors for cross origin allowance
 const cors = require('cors');
 app.use(cors());
-// Initialize the main project folder
-app.use(express.static('website'));
-
-// Add Get Route 
-app.get('/all', (req, res) => {
-    res.send(projectData);
-})
-
-// Add Post Route
-app.post('/add', (req, res) => {
-    let data = req.body;
-    projectData.temperature = data.temperature;
-    projectData.date = data.date;
-    projectData.userResponse = data.userResponse;
-    res.send(projectData);
-})
-
-// Add Post Route for adding incoming data to projectData
-
-
-
-function addTemperature (req, res) {
-    data.push(req.body);
-}
 
 // Setup Server
 const port = 8080;
@@ -46,4 +22,26 @@ const server = app.listen(port, () => {
     console.log('server running');
     console.log(`running on localhost: ${port}`)
 });
+
+// Initialize the main project folder
+app.use(express.static('website'));
+
+// Add Get Route
+app.get('/all', sendData);
+
+function sendData (req, res) {
+    res.send(projectData);
+};
+
+// Add Post Route for adding incoming data to projectData
+const data = [];
+
+app.post('/api', (req, res) => {
+    console.log('I got a request');
+    data.push(req.body);
+    console.log(data);
+})
+
+
+
 

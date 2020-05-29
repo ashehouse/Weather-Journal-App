@@ -4,7 +4,8 @@
 let d = new Date();
 let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
 
-const postData = async ( url = '/all', data = {'testing'}) => {
+ 
+const postData = async (url = '', data = {}) => {
     console.log(data);
     const response = await fetch(url, {
         method: 'POST',
@@ -14,13 +15,13 @@ const postData = async ( url = '/all', data = {'testing'}) => {
         },
         body: JSON.stringify(data),
     });
+
     try {
         const newData = await response.json();
         console.log(newData);
         return newData;
     }catch(error) {
-        console.log("error, error");
+        console.log('error', error);
     }
 }
 
-postData('/add', {answer:42});

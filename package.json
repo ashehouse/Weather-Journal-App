@@ -12,7 +12,7 @@
     "url": "git+https://github.com/ashehouse/Udacity-FEND-Weather-Journal-App.git"
   },
   "author": "Jody Dixon",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ashehouse/Udacity-FEND-Weather-Journal-App/issues"
   },
@@ -20,5 +20,13 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1"
-  }
+  },
+  "devDependencies": {},
+  "keywords": [
+    "weather",
+    "journal",
+    "udacity",
+    "student",
+    "fend"
+  ]
 }
